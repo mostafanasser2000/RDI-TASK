@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd party
     "rest_framework",
+    "drf_spectacular",
     # local
     "core",
 ]
@@ -139,4 +140,14 @@ REST_FRAMEWORK = {
         "rest_framework.throttling.UserRateThrottle",
     ),
     "DEFAULT_THROTTLE_RATES": {"anon": "5/minute", "user": "10/minute"},
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# Documentation
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Mini Document Service API",
+    "DESCRIPTION": "API for a document processing service. Users can upload images and PDF files to the API, and the API will perform some operations on the files and return the results",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
 }
