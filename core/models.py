@@ -10,7 +10,7 @@ from PIL import Image
 
 def upload_file_to(instance, filename):
     cur_date = timezone.now()
-    return f"{"pdfs" if isinstance(instance, PDFItem)  else "images"}/{cur_date.year}/{cur_date.month}/{cur_date.day}/{filename}"
+    return f"{'pdfs' if isinstance(instance, PDFItem) else 'images'}/{cur_date.year}/{cur_date.month}/{cur_date.day}/{filename}"
 
 
 class BaseModel(models.Model):
