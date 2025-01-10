@@ -49,7 +49,7 @@ class ImageRotateView(APIView):
         if serializer.is_valid():
             try:
                 data = serializer.save()
-                content_type = f"image/{data["format"]}"
+                content_type = f"image/{data['format']}"
                 return FileResponse(
                     data["rotated_image"],
                     as_attachment=True,
